@@ -1,0 +1,65 @@
+<!DOCTYPE html> <!-- Tells the browser this is a modern HTML5 page -->
+<html lang="en"> <!-- Root element; lang helps screen readers and search engines -->
+<head> <!-- Information ABOUT the page (not shown on the page itself) -->
+  <meta charset="UTF-8"> <!-- Lets the page display all characters correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page scale properly on phones -->
+  <title>Max Wilde | Portfolio</title> <!-- Text shown in the browser tab -->
+  <meta name="description" content="Portfolio of Max Wilde, an Information Technology and Business graduate interested in AI, data science and technology consulting."> <!-- Summary shown in search results -->
+  <link rel="stylesheet" href="style.css"> <!-- Loads our CSS file (empty for now) -->
+</head>
+<body> <!-- Everything visible on the page goes in here -->
+
+  <header class="site-header"> <!-- Top bar that will appear on every page -->
+    <a href="index.html" class="logo">Max Wilde</a> <!-- Clicking your name returns to the homepage -->
+    <nav> <!-- Navigation menu: a group of links to the other pages -->
+      <ul> <!-- An unordered list; each link sits in a list item -->
+        <li><a href="index.html">Home</a></li> <!-- Link to this page -->
+        <li><a href="about.html">About</a></li> <!-- Page we will create later -->
+        <li><a href="projects.html">Projects</a></li> <!-- Page we will create later -->
+        <li><a href="skills.html">Skills</a></li> <!-- Page we will create later -->
+        <li><a href="experience.html">Experience</a></li> <!-- Page we will create later -->
+        <li><a href="contact.html">Contact</a></li> <!-- Page we will create later -->
+      </ul>
+    </nav>
+  </header>
+
+  <main> <!-- The main content of this page (one per page) -->
+
+    <section class="hero"> <!-- Introduction section at the top of the page -->
+      <p class="eyebrow">BSc Information Technology and Business</p> <!-- Small label above the heading -->
+      <h1>Hi, I'm Max Wilde.</h1> <!-- The main heading; only use one h1 per page -->
+      <p class="hero-text">I'm a graduate building a career in AI, data science and technology consulting. I'm interested in how emerging technologies work, how they can be implemented in practice, and how organisations can use them to solve real problems.</p> <!-- Short introduction in your own voice (edit freely) -->
+      <div class="hero-buttons"> <!-- Container that groups the two buttons -->
+        <a href="projects.html" class="button primary">View my projects</a> <!-- Main call to action -->
+        <a href="contact.html" class="button secondary">Get in touch</a> <!-- Secondary action -->
+      </div>
+    </section>
+
+    <section class="featured"> <!-- Highlights your main project -->
+      <h2>Featured project</h2> <!-- Section heading (h2 = second level) -->
+      <article class="project-card"> <!-- article = a self-contained piece of content -->
+        <h3>ESP32-CAM AI CalorieTracker</h3> <!-- Project title (h3 = third level) -->
+        <p>A food-tracking system in development. An ESP32-CAM microcontroller photographs meals and uploads them to a Supabase cloud backend, with AI image analysis planned as the next stage.</p> <!-- Honest status: AI analysis is future work -->
+        <ul class="tags"> <!-- Technology labels -->
+          <li>ESP32-CAM</li>
+          <li>Arduino / C++</li>
+          <li>Supabase</li>
+          <li>Deno Edge Functions</li>
+        </ul>
+        <a href="projects.html">Read the case study</a> <!-- Will link to the full write-up later -->
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"> <!-- Bottom of the page, repeated on every page -->
+    <p>&copy; 2026 Max Wilde</p> <!-- &copy; displays the © symbol -->
+    <ul class="social-links"> <!-- Replace each # with your real URL -->
+      <li><a href="#">LinkedIn</a></li> <!-- TODO: add your LinkedIn URL -->
+      <li><a href="#">GitHub</a></li> <!-- TODO: add your GitHub URL -->
+    </ul>
+  </footer>
+
+  <script src="script.js"></script> <!-- Loads our JavaScript at the end so the page appears first -->
+</body>
+</html>
