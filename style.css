@@ -1,0 +1,142 @@
+/* ===== 1. VARIABLES: change a colour here and it changes everywhere ===== */
+:root { /* :root means "the whole page"; variables defined here can be used anywhere */
+  --color-bg: #ffffff; /* page background */
+  --color-bg-soft: #f8fafc; /* light grey-blue used for cards and footer */
+  --color-text: #0f172a; /* main text: very dark blue, softer than pure black */
+  --color-muted: #475569; /* secondary text */
+  --color-border: #e2e8f0; /* thin lines and outlines */
+  --color-accent: #2563eb; /* your blue accent */
+  --color-accent-dark: #1d4ed8; /* darker blue for hover effects */
+  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* uses each device's own modern font, so nothing to download */
+  --max-width: 1000px; /* widest the content is allowed to get */
+}
+
+/* ===== 2. BASE STYLES: apply to the whole page ===== */
+* { /* * selects every element */
+  box-sizing: border-box; /* padding and borders count inside an element's width, which makes sizing predictable */
+  margin: 0; /* removes the browser's default spacing so we control it ourselves */
+  padding: 0; /* same for padding */
+}
+
+body {
+  font-family: var(--font-main); /* var(...) reads the variable defined above */
+  color: var(--color-text); /* default text colour */
+  background-color: var(--color-bg); /* page background */
+  line-height: 1.6; /* space between lines of text; improves readability */
+}
+
+a {
+  color: var(--color-accent); /* links use the accent blue */
+  text-decoration: none; /* removes the default underline */
+}
+
+a:hover {
+  color: var(--color-accent-dark); /* :hover applies while the mouse is over the link */
+}
+
+ul {
+  list-style: none; /* removes bullet points (we only use lists for menus and tags) */
+}
+
+/* ===== 3. HEADER AND NAVIGATION ===== */
+.site-header { /* the dot means "elements with class site-header" */
+  display: flex; /* flexbox: puts the logo and menu side by side in a row */
+  justify-content: space-between; /* logo on the far left, menu on the far right */
+  align-items: center; /* centres them vertically */
+  flex-wrap: wrap; /* if there isn't enough room (small screens), items wrap onto a new line */
+  gap: 1rem; /* space between wrapped items; rem is relative to the base font size */
+  max-width: var(--max-width); /* stops the header stretching too wide on big monitors */
+  margin: 0 auto; /* auto left and right margins centre the block on the page */
+  padding: 1.25rem 1.5rem; /* space inside: top/bottom, then left/right */
+}
+
+.logo {
+  font-size: 1.25rem; /* slightly larger than body text */
+  font-weight: 700; /* bold */
+  color: var(--color-text); /* dark rather than link blue */
+}
+
+.site-header nav ul { /* only the list inside the header nav */
+  display: flex; /* lays the menu items out in a row */
+  flex-wrap: wrap; /* lets items wrap on narrow screens */
+  gap: 1.5rem; /* space between menu items */
+}
+
+.site-header nav a {
+  color: var(--color-muted); /* menu links are grey until hovered */
+  font-weight: 500; /* medium weight */
+}
+
+.site-header nav a:hover {
+  color: var(--color-accent); /* turn blue on hover */
+}
+
+/* ===== 4. HERO SECTION ===== */
+main { /* the main content area */
+  max-width: var(--max-width); /* same width limit as the header so everything lines up */
+  margin: 0 auto; /* centred */
+  padding: 0 1.5rem; /* side padding so text never touches the screen edge on phones */
+}
+
+.hero {
+  padding: 4rem 0 3rem; /* generous space above and below the introduction */
+}
+
+.eyebrow {
+  color: var(--color-accent); /* blue label */
+  font-weight: 600; /* semi-bold */
+  font-size: 0.9rem; /* a bit smaller than body text */
+  text-transform: uppercase; /* shows the text in capitals */
+  letter-spacing: 0.08em; /* spreads the letters slightly; looks good on small capitals */
+  margin-bottom: 0.75rem; /* gap below the label */
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem); /* clamp(min, preferred, max): scales with screen width but never too small or too big */
+  line-height: 1.15; /* tighter lines suit large headings */
+  margin-bottom: 1rem; /* gap below the heading */
+}
+
+.hero-text {
+  max-width: 60ch; /* ch = width of a "0"; ~60 characters per line is easiest to read */
+  font-size: 1.15rem; /* slightly larger intro paragraph */
+  color: var(--color-muted); /* softer than the heading */
+  margin-bottom: 2rem; /* gap before the buttons */
+}
+
+/* ===== 5. BUTTONS ===== */
+.hero-buttons {
+  display: flex; /* buttons side by side */
+  flex-wrap: wrap; /* stack on very narrow screens */
+  gap: 1rem; /* space between buttons */
+}
+
+.button {
+  display: inline-block; /* lets a link have padding and a background like a button */
+  padding: 0.75rem 1.5rem; /* space inside the button */
+  border-radius: 8px; /* rounded corners */
+  font-weight: 600; /* semi-bold text */
+  border: 2px solid var(--color-accent); /* outline; also keeps both buttons the same size */
+  transition: background-color 0.2s, color 0.2s; /* smooth colour change over 0.2 seconds on hover */
+}
+
+.button.primary { /* .button.primary = an element with BOTH classes */
+  background-color: var(--color-accent); /* solid blue */
+  color: #ffffff; /* white text */
+}
+
+.button.primary:hover {
+  background-color: var(--color-accent-dark); /* darker blue on hover */
+  border-color: var(--color-accent-dark); /* keep the outline matching */
+  color: #ffffff; /* stop the general link hover colour changing the text */
+}
+
+.button.secondary {
+  background-color: transparent; /* outline-only button */
+  color: var(--color-accent); /* blue text */
+}
+
+.button.secondary:hover {
+  background-color: var(--color-accent); /* fills with blue on hover */
+  color: #ffffff; /* text turns white */
+}
