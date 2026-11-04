@@ -140,3 +140,92 @@ main { /* the main content area */
   background-color: var(--color-accent); /* fills with blue on hover */
   color: #ffffff; /* text turns white */
 }
+
+/* ===== 6. FEATURED PROJECT CARD ===== */
+.featured {
+  padding: 2rem 0 4rem; /* space above and below the section */
+}
+
+.featured h2 {
+  font-size: 1.75rem; /* section heading size */
+  margin-bottom: 1.5rem; /* gap between heading and card */
+}
+
+.project-card {
+  background-color: var(--color-bg-soft); /* light tinted background to lift the card off the page */
+  border: 1px solid var(--color-border); /* thin outline */
+  border-radius: 12px; /* rounded corners */
+  padding: 2rem; /* space inside the card */
+  transition: box-shadow 0.2s, transform 0.2s; /* smooth animation for the hover effect below */
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); /* soft shadow: x-offset, y-offset, blur, colour with 8% opacity */
+  transform: translateY(-2px); /* lifts the card up by 2 pixels */
+}
+
+.project-card h3 {
+  font-size: 1.35rem; /* card title */
+  margin-bottom: 0.75rem; /* gap below the title */
+}
+
+.project-card p {
+  color: var(--color-muted); /* softer description text */
+  max-width: 65ch; /* keeps lines a readable length */
+  margin-bottom: 1.25rem; /* gap before the tags */
+}
+
+.tags {
+  display: flex; /* tags in a row */
+  flex-wrap: wrap; /* wrap onto new lines if needed */
+  gap: 0.5rem; /* space between tags */
+  margin-bottom: 1.5rem; /* gap before the link */
+}
+
+.tags li {
+  background-color: #dbeafe; /* pale blue pill background */
+  color: var(--color-accent-dark); /* darker blue text for contrast */
+  font-size: 0.85rem; /* small text */
+  font-weight: 500; /* medium weight */
+  padding: 0.25rem 0.75rem; /* space inside each pill */
+  border-radius: 999px; /* a huge radius makes fully rounded ends */
+}
+
+.project-card > a { /* > means "a link that is a direct child of the card" */
+  font-weight: 600; /* semi-bold link */
+}
+
+/* ===== 7. FOOTER ===== */
+.site-footer {
+  display: flex; /* copyright on the left, links on the right */
+  justify-content: space-between; /* pushes them apart */
+  align-items: center; /* vertical centring */
+  flex-wrap: wrap; /* wraps on narrow screens */
+  gap: 1rem; /* space between wrapped items */
+  padding: 1.5rem; /* space inside the footer */
+  border-top: 1px solid var(--color-border); /* thin line separating it from the page */
+  background-color: var(--color-bg-soft); /* same tint as the card */
+  color: var(--color-muted); /* softer text */
+  font-size: 0.9rem; /* slightly smaller text */
+}
+
+.social-links {
+  display: flex; /* links in a row */
+  gap: 1.25rem; /* space between links */
+}
+
+/* ===== 8. RESPONSIVE: rules that only apply on small screens ===== */
+@media (max-width: 600px) { /* everything inside applies only when the screen is 600px wide or less */
+  .hero {
+    padding: 2.5rem 0 2rem; /* less vertical space on phones */
+  }
+
+  .hero-buttons .button {
+    width: 100%; /* buttons stretch across the screen, easier to tap */
+    text-align: center; /* centre the button text */
+  }
+
+  .project-card {
+    padding: 1.25rem; /* tighter card padding on phones */
+  }
+}
